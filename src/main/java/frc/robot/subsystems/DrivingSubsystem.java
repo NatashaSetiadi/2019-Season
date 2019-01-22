@@ -12,6 +12,15 @@ public class DrivingSubsystem extends Subsystem {
 	public static double baseDriveSpeed = 0.75;
 
 	private NeutralMode neutralMode;
+	
+	Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
+	int count = encoder.get();
+	double distance = encoder.getRaw();
+	double encoderDistance = encoder.getDistance();
+	double period = encoder.getPeriod();
+	double rate = encoder.getRate();
+	boolean direction = encoder.getDirection();
+	boolean stopped = sampleEncoder.getStopped();
 
 	public void initDefaultCommand() {}
 	
